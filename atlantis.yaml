@@ -1,0 +1,16 @@
+version: 3
+parallel_plan: true
+parallel_apply: true
+projects:
+- name: project1
+  dir: .
+  workspace: stage
+  autoplan:
+    when_modified: ["*.tf"]
+    enabled: true
+- name: project2
+  dir: .
+  workspace: prod
+  autoplan:
+    when_modified: ["*.tf"]
+    enabled: true
